@@ -9,6 +9,18 @@
                 robotArm.loadLevel("exercise 8");
               
                 // Je eigen code plaats je hier.
+                robotArm.moveRight();
+                for (a = 0; a < 7; a++) {
+                        robotArm.grab();
+                        for (c = 0; c < 8; c++) {
+                            robotArm.moveRight();
+                        }
+                        robotArm.drop();
+                        for (d = 0; d < 8; d++) {
+                            robotArm.moveLeft();
+                        }
+                    }
+                    robotArm.moveRight();
               
                 robotArm.run();
         </script>

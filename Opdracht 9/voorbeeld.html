@@ -3,18 +3,29 @@
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
         <script>
-            // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
-            
-            // Het level inladen
-            robotArm.loadLevel("exercise 1");
-            
-            // Jou instructies volgen hier
-            robotArm.moveRight();
-            robotArm.moveRight();
-            
-            // De door jou opgegeven instructies uitvoeren
+          
+            robotArm.loadLevel("exercise 9");
+          
+            // Je eigen code plaats je hier.
+            for (d = 0; d < 8; d++) {
+                for (b = 0; b < 8; b++) {
+                robotArm.grab();
+                for (c = 0; c < 5; c++) {
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for (c = 0; c < 4; c++) {
+                    robotArm.moveLeft();
+                }
+                
+            }
+            for (a = 0; a < 5; a++) {
+                robotArm.moveLeft();
+            }
+            }
+              
             robotArm.run();
         </script>
     </body>
