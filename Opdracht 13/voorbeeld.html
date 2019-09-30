@@ -9,13 +9,19 @@
             robotArm.randomLevel( 1, 8);
           
             // Je eigen code plaats je hier.
+            nummer = 1;
+           for (k = 0; k < 10; k++){
+               robotArm.grab();
+               for (j = 0; j < nummer; j++){
+                   robotArm.moveRight();
+               }
+               robotArm.drop();
+               nummer++
+               for (n = 0; n < nummer; n++){
+                   robotArm.moveLeft();
+               }
 
-            for(k = 0; k < 10; k++){
-                nummer = 1;
-                for(h = 0; h < nummer; h++){
-                    robotArm.grab();
-                }
-            }
+           }
           
             robotArm.run();
           </script>

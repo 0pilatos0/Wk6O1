@@ -9,7 +9,7 @@
             robotArm.loadLevel("exercise 12");
           
             // Je eigen code plaats je hier.
-            for (j = 0; j < 45; j++){
+            /*for (j = 0; j < 9; j++){
                     robotArm.grab();
                     color = robotArm.scan();
                     if(color == "red"){
@@ -21,6 +21,30 @@
                         robotArm.drop();
                         robotArm.moveRight();}}
           
+*/
+            for (j = 0; j <9; j++){
+                for(k = 0; k < 4; k++){
+                    nummer = 9;
+                    robotArm.grab();
+                    color = robotArm.scan();
+                    if(color == "red"){
+                        
+                        for(n = 0; n < nummer; n++){
+                            robotArm.moveRight();
+                        }
+                        robotArm.drop();
+                        for(b = 0; b < nummer; b++){
+                            robotArm.moveLeft();
+                        }
+                    }
+                    else{
+                        robotArm.drop();
+                    }
+                    nummer--
+                    robotArm.moveRight();
+                    
+                }
+            }
             robotArm.run();
           </script>
     </body>
