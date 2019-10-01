@@ -3,7 +3,6 @@ function moveRight(aantal){
         robotArm.moveRight();
     }
 }
-
 function moveLeft(aantal){
     for(i = 0; i < aantal; i++ ){
         robotArm.moveLeft();
@@ -20,4 +19,20 @@ function scan(){
     kleur = robotArm.scan();
     drop();
     return kleur;
+}
+function dropRight(aantal){
+    moveRight(aantal);
+    drop();
+}
+function dropLeft(aantal){
+    moveLeft(aantal);
+    drop();
+}
+function grabRight(aantal){
+    moveRight(aantal);
+    grab();
+}
+function grabLeft(aantal){
+    moveLeft(aantal);
+    grab();
 }

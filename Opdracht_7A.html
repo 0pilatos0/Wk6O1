@@ -2,8 +2,9 @@
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
-        <a href="Opdracht_6.html">vorige opdracht</a>
-        <a href="Opdracht_8.html">volgende opdracht</a>
+        <script src="./functies.js"></script>
+        <a href="Opdracht_6A.html">vorige opdracht</a>
+        <a href="Opdracht_8A.html">volgende opdracht</a>
         <script>
                 var canvas = document.getElementById("canvas");
                 var robotArm = new RobotArm(canvas);
@@ -12,14 +13,13 @@
               
                 // Je eigen code plaats je hier.
                 for (i = 0; i < 5; i++) {
-                    robotArm.moveRight();
+                    moveRight(1);
                     for (a = 0; a < 6; a++) {
-                        robotArm.grab();
-                        robotArm.moveLeft();
-                        robotArm.drop();
-                        robotArm.moveRight();
+                        grab();
+                        dropLeft(1);
+                        moveRight(1);
                     }
-                    robotArm.moveRight();
+                    moveRight(1);
                 } 
                 robotArm.run();
               </script>

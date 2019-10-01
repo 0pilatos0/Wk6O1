@@ -3,7 +3,7 @@
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
         <script src="./functies.js"></script>
-        <a href="Opdracht_2.html">volgende opdracht</a>
+        <a href="Opdracht_2A.html">volgende opdracht</a>
         <script>
                 var canvas = document.getElementById("canvas");
                 var robotArm = new RobotArm(canvas);
@@ -11,7 +11,8 @@
                 robotArm.loadLevel("exercise 1");
               
                 // Je eigen code plaats je hier
-                moveRight(3)
+                grabRight(1)
+                dropLeft(1)
 
                 robotArm.run();
               </script>
