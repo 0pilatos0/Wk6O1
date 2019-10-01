@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <a href="Opdracht_7.html">vorige opdracht</a>
+        <a href="Opdracht_9.html">volgende opdracht</a>
+        <script>
+                var canvas = document.getElementById("canvas");
+                var robotArm = new RobotArm(canvas);
+              
+                robotArm.loadLevel("exercise 8");
+              
+                // Je eigen code plaats je hier.
+                robotArm.moveRight();
+                for (a = 0; a < 7; a++) {
+                        robotArm.grab();
+                        for (c = 0; c < 8; c++) {
+                            robotArm.moveRight();
+                        }
+                        robotArm.drop();
+                        for (d = 0; d < 8; d++) {
+                            robotArm.moveLeft();
+                        }
+                    }
+                    robotArm.moveRight();
+              
+                robotArm.run();
+        </script>
+    </body>
+</html>
