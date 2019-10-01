@@ -2,6 +2,7 @@
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
+        <script src="./functies.js"></script>
         <a href="Opdracht_10A.html">vorige opdracht</a>
         <a href="Opdracht_12A.html">volgende opdracht</a>
         <script>
@@ -11,20 +12,19 @@
             robotArm.loadLevel("exercise 11");
           
             // Je eigen code plaats je hier.
-                for (j = 0; j < 10; j++){
-                    robotArm.grab();
-                    color = robotArm.scan();
-                    if(color == "white"){
-                        robotArm.moveLeft();
-                        robotArm.drop();
-                        robotArm.moveRight();
-                        robotArm.moveRight();
-                    }
-                    else{
-                        robotArm.drop();
-                        robotArm.moveRight();
-                    }
+            moveRight(0)
+            for (let i = 0; i < 9; i++) {
+                let kleur = scan()
+                if (kleur == "white") {
+                    moveLeft(1)
+                    drop()
+                    moveRight(2)
                 }
+                else{
+                    drop()
+                    moveRight(1)
+                }
+            }
             robotArm.run();
           </script>
     </body>

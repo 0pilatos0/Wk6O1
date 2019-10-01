@@ -2,6 +2,7 @@
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
+        <script src="./functies.js"></script>
         <a href="Opdracht_12A.html">vorige opdracht</a>
         <script>
             // Robotarm bibliotheek inladen
@@ -14,20 +15,14 @@
             // Jou instructies volgen hier
             let amount = 1;
             for (let i = 0; i < 8; i++) {
-                robotArm.grab();
-                let block = robotArm.scan();
+                let block = scan()
                 if(block == null){
                     break;
                 }
-                for (let i = 0; i < amount; i++) {
-                    robotArm.moveRight();
-                }
-                robotArm.drop();
-                for (let i = 0; i < amount; i++) {
-                    robotArm.moveLeft();   
-                }
+                moveRight(amount)
+                drop()
+                moveLeft(amount)
                 amount++
-                
             }
             
             // De door jou opgegeven instructies uitvoeren

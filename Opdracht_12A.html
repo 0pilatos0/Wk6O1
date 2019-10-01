@@ -2,6 +2,7 @@
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
+        <script src="./functies.js"></script>
         <a href="Opdracht_11A.html">vorige opdracht</a>
         <a href="Opdracht_13A.html">volgende opdracht</a>
         <script>
@@ -11,41 +12,23 @@
             robotArm.loadLevel("exercise 12");
           
             // Je eigen code plaats je hier.
-            /*for (j = 0; j < 9; j++){
-                    robotArm.grab();
-                    color = robotArm.scan();
-                    if(color == "red"){
-                        robotArm.moveRight();
-                        robotArm.drop();
-                        robotArm.moveLeft();
-                        robotArm.moveLeft();}
-                    else{
-                        robotArm.drop();
-                        robotArm.moveRight();}}
-          
-*/
-let amount;
-        for (let x = 0; x < 9; x++) {
-            robotArm.grab();
-            amount = 9
-            let kleur = robotArm.scan();
-            if(kleur == "red"){
-                let temp = amount - x
-                for (let i = 0; i < temp; i++) {
-                    robotArm.moveRight();   
+            let amount;
+            for (let x = 0; x < 9; x++) {
+                amount = 9
+                let kleur = scan()
+                if(kleur == "red"){
+                    let temp = amount - x
+                    moveRight(temp)
+                    drop()
+                    moveLeft(temp)
+                    moveRight(1)
+                    amount++
                 }
-                robotArm.drop();
-                for (let i = 0; i < temp; i++) {
-                    robotArm.moveLeft();
-                }
-                robotArm.moveRight()
-                amount++
+                else{
+                    drop()
+                    moveRight(1)
+                }  
             }
-            else{
-                robotArm.drop();
-                robotArm.moveRight();
-            }  
-        }
             robotArm.run();
           </script>
     </body>

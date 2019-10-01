@@ -17,7 +17,6 @@ function grab(){
 function scan(){
     grab();
     kleur = robotArm.scan();
-    drop();
     return kleur;
 }
 function dropRight(aantal){

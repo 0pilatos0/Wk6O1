@@ -2,6 +2,7 @@
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
+        <script src="./functies.js"></script>
         <a href="Opdracht_8A.html">vorige opdracht</a>
         <a href="Opdracht_10A.html">volgende opdracht</a>
         <script>
@@ -10,20 +11,14 @@
           
             robotArm.loadLevel("exercise 9");
             
-            amount = 1;
-            for (k = 0; k < 4; k++){
-                for (i = 0; i < amount; i++){
-                    robotArm.grab();
-                    for (j = 0; j < 4; j++){
-                        robotArm.moveRight();
-                    }
-                    robotArm.drop();
-                    for (j = 0; j < 4; j++){
-                        robotArm.moveLeft();
-                    }
+            let amount = 2
+            for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < amount; i++) {
+                    dropRight(5)
+                    grabLeft(5)
                 }
                 amount++
-                robotArm.moveRight();
+                moveRight(1)
             }
            
             robotArm.run();
