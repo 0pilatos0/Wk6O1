@@ -12,12 +12,14 @@
                 robotArm.loadLevel("exercise 6");
               
                 // Je eigen code plaats je hier.
-                grabRight(7)
-                for(k = 0; k < 7; k++){
-                    dropRight(1)
-                    grabLeft(2)
+                for (let i = 0; i < 7; i++) {
+                     moveRight()
                 }
-                dropRight(1)
+                for (let i = 0; i < 8; i++) {
+                    dropRight()
+                    moveLeft(2)
+                }
+            
                 robotArm.run();
         </script>
     </body>

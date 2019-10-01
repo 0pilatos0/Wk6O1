@@ -12,17 +12,17 @@
             robotArm.loadLevel("exercise 11");
           
             // Je eigen code plaats je hier.
-            moveRight(0)
+            moveRight()
             for (let i = 0; i < 9; i++) {
                 let kleur = scan()
                 if (kleur == "white") {
-                    moveLeft(1)
+                    moveLeft()
                     drop()
                     moveRight(2)
                 }
                 else{
                     drop()
-                    moveRight(1)
+                    moveRight()
                 }
             }
             robotArm.run();

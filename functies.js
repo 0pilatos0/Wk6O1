@@ -1,37 +1,59 @@
-function moveRight(aantal){
-    for(i = 0; i < aantal; i++ ){
-        robotArm.moveRight();
+function moveRight(amount){
+    if (amount == null){
+        amount = 1
+    }
+    for (let i = 0; i < amount; i++) {
+        robotArm.moveRight()
     }
 }
-function moveLeft(aantal){
-    for(i = 0; i < aantal; i++ ){
-        robotArm.moveLeft();
+
+function moveLeft(amount){
+    if (amount == null){
+        amount = 1
+    }
+    for (let i = 0; i < amount; i++) {
+        robotArm.moveLeft()  
     }
 }
-function drop(){
-    robotArm.drop();
-}
+
 function grab(){
-    robotArm.grab();
+    robotArm.grab()
 }
+
 function scan(){
-    grab();
-    kleur = robotArm.scan();
-    return kleur;
+    grab()
+    let kleur = robotArm.scan()
+    return kleur
 }
-function dropRight(aantal){
-    moveRight(aantal);
-    drop();
+
+function drop(){
+    robotArm.drop()
 }
-function dropLeft(aantal){
-    moveLeft(aantal);
-    drop();
+
+function dropRight(amount){
+    if (amount == null){
+        amount = 1
+    }
+    grab()
+    moveRight(amount)
+    drop()
 }
-function grabRight(aantal){
-    moveRight(aantal);
-    grab();
+
+function dropLeft(amount){
+    if (amount == null){
+        amount = 1
+    }
+    grab()
+    moveLeft(amount)
+    drop()
 }
-function grabLeft(aantal){
-    moveLeft(aantal);
-    grab();
+
+function move(richting, aantal){
+    
+    if(richting == "R"){
+        moveRight(aantal);
+    }
+    else if(richting == "L"){
+        moveLeft(aantal);
+    }
 }
