@@ -2,6 +2,8 @@
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
+        <a href="Opdracht_11.html">vorige opdracht</a>
+        <a href="Opdracht_13.html">volgende opdracht</a>
         <script>
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
@@ -22,30 +24,28 @@
                         robotArm.moveRight();}}
           
 */
-            for (j = 0; j <9; j++){
-                nummer = 9;
-                for(k = 0; k < 4; k++){
-
-                    robotArm.grab();
-                    color = robotArm.scan();
-                    if(color == "red"){
-                        
-                        for(n = 0; n < nummer; n++){
-                            robotArm.moveRight();
-                        }
-                        robotArm.drop();
-                        for(b = 0; b < nummer; b++){
-                            robotArm.moveLeft();
-                        }
-                    }
-                    else{
-                        robotArm.drop();
-                    }
-                    nummer--
-                    robotArm.moveRight();
-                    
+let amount;
+        for (let x = 0; x < 9; x++) {
+            robotArm.grab();
+            amount = 9
+            let kleur = robotArm.scan();
+            if(kleur == "red"){
+                let temp = amount - x
+                for (let i = 0; i < temp; i++) {
+                    robotArm.moveRight();   
                 }
+                robotArm.drop();
+                for (let i = 0; i < temp; i++) {
+                    robotArm.moveLeft();
+                }
+                robotArm.moveRight()
+                amount++
             }
+            else{
+                robotArm.drop();
+                robotArm.moveRight();
+            }  
+        }
             robotArm.run();
           </script>
     </body>
