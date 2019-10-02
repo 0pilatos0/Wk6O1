@@ -11,13 +11,14 @@
           
             robotArm.loadLevel("exercise 9");
             
-            let amount1 = 9
-            let amount2 = 8
-            for (let i = 0; i < 5; i++) {
-                dropRight(amount1)
-                moveLeft(amount2)
-                amount1-=2
-                amount2-=2   
+            let amount = 1
+            for (let i = 0; i < 4; i++) {
+                for (let i = 0; i < amount; i++) {
+                    dropRight(5)
+                    moveLeft(5)
+                }
+                amount++
+                moveRight()
             }
            
             robotArm.run();
